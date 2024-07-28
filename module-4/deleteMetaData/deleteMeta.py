@@ -30,8 +30,9 @@ def main():
 
     input_file = args.input
     output_file = args.output
+    no_meta_file = "no_meta.pdf"
     delete_meta_exif(input_file, output_file)
-    linearize(input_file, output_file)
+    linearize(output_file, no_meta_file)
 
 
 if __name__ == "__main__":
