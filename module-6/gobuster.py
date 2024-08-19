@@ -22,30 +22,22 @@ def main():
     service = Service(executable_path=driver_path)
     driver = webdriver.Firefox(service=service, options=options)
 
-    # Get the base content only once
-    try:
-        driver.get(url)
-        time.sleep(2)  # Ensure the page is fully loaded
-        base_content = driver.page_source
-    except Exception as e:
-        print(f"An error occurred when fetching the base URL: {str(e)}")
-        driver.quit()
-        return
-
     # Check dirs
     def check_for_dirs(driver, base_url, directory):
         full_url = f"{base_url}/{directory}"
         
         try:
             driver.get(full_url)
-            time.sleep(2)  # Ensure the page is fully loaded
+            time.sleep(2)
+            base_content= driver.page_source
+
+            driver.get(full_url)
+            time.sleep(2)  
             
             full_content = driver.page_source
             
             if base_content != full_content:
-                print(f"[+] Found: {full_url}")
-            else:
-                print(f"[-] Not found: {full_url}")
+                print(f"Found dir: {full_url}")
         
         except Exception as e:
             print(f"An error occurred with {full_url}: {str(e)}")
