@@ -25,14 +25,18 @@ This script is a simple web directory brute-forcer, similar to "Gobuster," but i
 
 1. Clone the repository
 2. Install dependencies
+   
    ```
    pip install selenium==4.9.0
    ```
-3. Download the geckodriver. Be sure that the geckodriver is installed under this path: `/usr/local/bin/geckodriver`
-4. Be sure that you have the path to your wordlist
-5. Start the script with:
+   
+4. Download the geckodriver. Be sure that the geckodriver is installed under this path: `/usr/local/bin/geckodriver`
+5. Be sure that you have the path to your wordlist
+6. Start the script with:
+   
    ```
    python gobuster.py -url <base-url> -wordlist <path/to/wordlist>
+   ```
 
 ## Alternative
 
