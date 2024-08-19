@@ -27,7 +27,7 @@ def main():
         full_url = f"{base_url}/{directory}"
         
         try:
-            driver.get(full_url)
+            driver.get(base_url)
             time.sleep(2)
             base_content= driver.page_source
 
